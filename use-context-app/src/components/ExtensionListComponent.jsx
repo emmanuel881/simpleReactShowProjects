@@ -23,16 +23,16 @@ function ExtensionListComponent() {
     return (
         <div>
             <div className='flex flex-col sm:flex-row justify-between mt-15 mb-10 '>
-                <h1 className='text-[22px] font-bold'>Extensions List</h1>
+                <h1 className='text-[22px] font-bold dark:text-black'>Extensions List</h1>
                 <div className='flex mt-4 sm:mt-0 justify-around w-80'>
-                    <button onClick={() => setFilter("All")} className='pt-2 pb-2 pl-6 pr-6 bg-[#1B1E2D] rounded-full border-2 border-gray-400 focus:border-pink-700 hover:cursor-pointer '>All</button>
-                    <button onClick={() => setFilter(true)} className='pt-2 pb-2 pl-6 pr-6 bg-[#1B1E2D] rounded-full border-2 border-gray-400 focus:border-pink-700  hover:cursor-pointer'>Active</button>
-                    <button onClick={() => setFilter(false)} className='pt-2 pb-2 pl-6 pr-6 bg-[#1B1E2D] rounded-full border-2 border-gray-400 focus:border-pink-700  hover:cursor-pointer'>Inactive</button>
+                    <button onClick={() => setFilter("All")} className='pt-2 pb-2 pl-6 pr-6 bg-[#1B1E2D] rounded-full border-2 border-gray-400 focus:border-pink-700 hover:cursor-pointer dark:bg-white dark:text-black'>All</button>
+                    <button onClick={() => setFilter(true)} className='pt-2 pb-2 pl-6 pr-6 bg-[#1B1E2D] rounded-full border-2 border-gray-400 focus:border-pink-700  hover:cursor-pointer dark:bg-white dark:text-black'>Active</button>
+                    <button onClick={() => setFilter(false)} className='pt-2 pb-2 pl-6 pr-6 bg-[#1B1E2D] rounded-full border-2 border-gray-400 focus:border-pink-700  hover:cursor-pointer dark:bg-white dark:text-black'>Inactive</button>
                 </div>
             </div>
             <div className='flex flex-col lg:grid grid-cols-3 gap-5'>
                 {filteredItems.map((item) => (
-                    <div key={item.id} className='bg-[hsl(226,25%,17%)] rounded-xl p-6'>
+                    <div key={item.id} className='bg-[hsl(226,25%,17%)] rounded-xl p-6 dark:bg-gray-100 dark:text-black'>
                         <div className='flex flex-row mb-10'>
                             <img src={item.image} alt={item.title} className="w-16 h-16 object-contain" />
                             <div className='ml-2'>
