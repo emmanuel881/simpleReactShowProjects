@@ -13,6 +13,13 @@ function ExtensionListComponent() {
         setItems(updatedItems)
     }
 
+    //remove item
+    const handleDelete = (id) => {
+        const updatedItems = items.filter(item => item.id !== id)
+
+        setItems(updatedItems)
+    }
+
 
     //my filter filter based on active button
     const [filter, setFilter] = useState("All")
@@ -41,10 +48,10 @@ function ExtensionListComponent() {
                             </div>
                         </div>
                         <div className='flex flex-row justify-between items-center p-2'>
-                            <button className='border p-2 rounded-full'>Remove</button>
+                            <button className='border p-2 rounded-full hover:cursor-pointer' onClick={() => handleDelete(item.id)}>Remove</button>
                             <button
                                 onClick={() => handleToggle(item.id)}
-                                className={`w-10 h-4 flex items-center rounded-full  transition duration-300 ${item.active ? 'bg-green-500' : 'bg-gray-400'}`}
+                                className={`w-10 h-4 flex items-center rounded-full  transition duration-300 ${item.active ? 'bg-green-500' : 'bg-gray-400'}  hover:cursor-pointer`}
                             >
                                 <div
                                     className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 ${item.active ? 'translate-x-6' : 'translate-x-0'}`}
